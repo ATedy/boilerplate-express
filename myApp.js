@@ -51,4 +51,11 @@ app.get("/:word/echo", function (req, res) {
   res.json({echo: word});
 });
 
+// echo route
+app.get("/name", function (req, res) {
+  firstName = req.query.first;
+  lastName = req.query.last;
+  res.json({name: `${firstName} ${lastName}`});
+});
+
 module.exports = app;
