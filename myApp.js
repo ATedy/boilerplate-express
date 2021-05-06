@@ -10,9 +10,9 @@ app.get("/", function (req, res) {
 app.use(express.static(path.join(__dirname, "public")));
 
 // serving the app with a json router
-let msg = {message: "Hello json"};
+
 app.get("/json", function (req, res) {
-  res.json(msg);
+  res.json({message: "Hello json"});
 });
 
 module.exports = app;
