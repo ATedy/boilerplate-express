@@ -45,4 +45,10 @@ app.get("/json", function (req, res) {
   res.json(greeting);
 });
 
+// echo route
+app.get("/:word/echo", function (req, res) {
+  word = req.params.word;
+  res.json({echo: word});
+});
+
 module.exports = app;
