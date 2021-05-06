@@ -1,9 +1,13 @@
-var express = require("express");
-var app = express();
-var path = require("path");
+const express = require("express");
+const app = express();
+const path = require("path");
+const bodyParser = require("bodyParser");
 
 const dotenv = require("dotenv");
 dotenv.config();
+
+//bodyParser
+app.use(bodyParser.urlencoded({extended: false}));
 
 //middleware function
 app.use(function (req, res, next) {
