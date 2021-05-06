@@ -18,6 +18,17 @@ app.get("/", function (req, res) {
   res.sendFile(__dirname + "/views/index.html");
 });
 
+app.get(
+  "/now",
+  function (req, res, next) {
+    req.user = new Date().toString(); // Hypothetical synchronous operation
+    next();
+  },
+  function (req, res) {
+    res.json({time: req.user});
+  }
+);
+
 // app.use(express.static(__dirname + "/public"));
 app.use(express.static(path.join(__dirname, "public")));
 
