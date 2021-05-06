@@ -5,6 +5,12 @@ var path = require("path");
 const dotenv = require("dotenv");
 dotenv.config();
 
+//middleware function
+app.use(function (req, res, next) {
+  console.log(req.method + " " + req.path + " " + "-" + " " + req.ip);
+  next();
+});
+
 // app.use(express.static(__dirname + "/public"));
 app.use("/public", express.static(__dirname + "/public"));
 
